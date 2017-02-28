@@ -1,0 +1,28 @@
+:root{
+  
+  --cPurpleDark: #92239B;
+  --cPurpleMedium: #ECDEEF;
+  --cPurpleLight: #FCFBFA;
+  --cGreyDark: #333333;
+  --cGreyMedium: #777777;
+  --cGreyLight: #EAEAEA;
+  --cBlack: #000;
+  --cWhite: #fff;
+
+  --f: 'Nunito', sans-serif;
+
+  --easing: cubic-bezier(.09,.79,.54,1.07);
+
+  --reset-background-after-touch{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+
+
+}
+
+@custom-media --xs (max-width: 400px);
+@custom-media --sm (min-width: 401px);
+@custom-media --md (min-width:801px);
+@custom-media --lg (min-width:1201px);
+
+@custom-media --touch (max-width: 600px);

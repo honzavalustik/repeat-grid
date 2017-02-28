@@ -1,0 +1,126 @@
+// Generate 100-items JSON based on this schema here: http://beta.json-generator.com/EJQ62s_Kz
+
+{
+  user: {
+    guid: "{{guid()}}",
+    first_name: "{{firstName()}}",
+    last_name: "{{surname()}}",
+    full_name: function () {
+      return (this.first_name + ' ' + this.last_name);
+    },
+    personal_email: function(tags){
+      var provider = ['gmail.com', 'yahoo.com', 'mail.com', 'outlook.com'];
+      return (this.last_name.toLowerCase() + '@' + provider[tags.integer(0, provider.length - 1)]);
+    },
+    personal_number: "+1 {{phone()}}",
+    web: function (tags) {
+      var domain = ['.com', '.co', '.me', '.net'];
+      return ('www.' + this.first_name.toLowerCase() + this.last_name.toLowerCase() + domain[tags.integer(0, domain.length - 1)]);
+    },
+    username: function(tags){
+      var symbol = ['', '', '34', 'xxy', '333', '957', '789', '22', '4a4', '1_a', 'm_e'];
+      return (this.first_name.toLowerCase() + symbol[tags.integer(0, symbol.length - 1)]);
+    },
+    twitter: function(){
+      return ('@' + this.username);
+    }
+  },
+  company:{
+    name: "{{company()}}",
+    web: function (tags) {
+      var domain = ['.com', '.co', '.me', '.net', '.org', '.io'];
+      return ('www.' + this.name.toLowerCase() + domain[tags.integer(0, domain.length - 1)]);
+    },
+    email: function(tags, parent){
+      return (parent.user.first_name.toLowerCase() + '.' + parent.user.last_name.toLowerCase() + '@' + this.web.substr(4));
+    },
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}'
+  },
+  address:{
+    country: "{{country()}}", 
+    state: "{{state()}}",
+    city: "{{city()}}",
+    zip: "{{integer(100, 10000)}}",
+    street: "{{street()}}",
+    address1: function(tags){
+      return (tags.integer(100, 999) + " " + this.street);
+    },
+    address2: function(tags){
+      var room = ['Suite ', '#12-', '#10-', '#22-', 'Room ', 'L20-'];
+      return (room[tags.integer(0, room.length - 1)] + tags.integer(1, 300));
+    },
+    latitude: "{{floating(-90.000001, 90)}}",
+    longitude: "{{floating(-180.000001, 180)}}"
+  },
+  text:{
+    word: function(tags){ return tags.lorem(1, 'words').toLowerCase();},
+    sentence: function(tags){ return tags.lorem(1, 'sentences').substr(1);},
+    paragraph: function(tags){ return tags.lorem(1, 'paragraphs').substr(1);},
+    br: "&nbsp;",
+    small_number: "{{integer(1, 99)}}",
+    medium_number: "{{integer(100, 9999)}}",
+    large_number: "{{integer(10000, 1000000)}}"
+  },
+  date:{
+    day: "{{integer(1, 31)}}",
+    day_name: function(tags){
+      var day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+      return (day[tags.integer(0, day.length - 1)]);
+    },
+    day_name_short: function(tags){
+      return this.day_name.substr(0,3);
+    },
+    month: "{{integer(1, 12)}}",
+    month_name: function(tags){
+      var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      return (month[tags.integer(0, month.length - 1)]);
+    },
+    month_name_short: function(tags){
+      return this.month_name.substr(0,3);
+    },
+    year: "{{integer(1900, 2017)}}",
+    dd_mm_yyyy: function(tags){
+      var d = this.day < 10 ? "0"+this.day : this.day;
+      var m = this.month < 10 ? "0"+this.month : this.month;
+      return(d + "/" + m + "/" + this.year);
+    },
+    yyyy_mm_dd: function(tags){
+      var d = this.day < 10 ? "0"+this.day : this.day;
+      var m = this.month < 10 ? "0"+this.month : this.month;
+      return(this.year + "/" + m + "/" + d);
+    },
+    mm_dd_yyyy: function(tags){
+      var d = this.day < 10 ? "0"+this.day : this.day;
+      var m = this.month < 10 ? "0"+this.month : this.month;
+      return(m + "/" + d + "/" + this.year);
+    },
+    date: function(tags){
+      var d = this.day < 10 ? "0"+this.day : this.day;
+      return(this.month_name + " " + d + ", " + this.year);
+    },
+    hour: "{{integer(1, 24)}}",
+    minute: "{{integer(1, 60)}}",
+    second: "{{integer(1, 60)}}",
+    am_pm: function(tags){
+      var am = ['am', 'pm'];
+      return (am[tags.integer(0, am.length - 1)]);
+    },
+    hh_mm_ss: function(tags){
+      var h = this.hour < 10 ? "0"+this.hour : this.hour;
+      var m = this.minute < 10 ? "0"+this.minute : this.minute;
+      var s = this.second < 10 ? "0"+this.second : this.second;
+      return(h + ":" + m + ":" + s);
+    },
+    time24: function(tags){
+      var h = this.hour < 10 ? "0"+this.hour : this.hour;
+      var m = this.minute < 10 ? "0"+this.minute : this.minute;
+      return(h + ":" + m);
+    },
+    time12: function(tags){
+      var m = this.minute < 10 ? "0"+this.minute : this.minute;
+      return(tags.integer(1, 12) + ":" + m + " " + this.am_pm);
+    }
+  }
+
+
+}

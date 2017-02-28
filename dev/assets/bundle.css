@@ -1,0 +1,101 @@
+@import "./modules/css/_settings.css";
+@import "./modules/css/_normalize.css";
+@import "./modules/css/box.css";
+@import "./modules/css/fields.css";
+@import "./modules/css/download.css";
+@import "./modules/css/more-content.css";
+
+
+body{
+  background: var(--cPurpleLight);
+  color: var(--cGreyDark);
+  font-family: var(--f);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 144px;
+  margin: 0 0 64px 0;
+  padding: 0;
+  background: var(--cWhite);
+  /*background: var(--cPurpleLight);*/
+  color: var(--cGreyDark);
+  border-bottom: 1px dashed var(--cPurpleMedium);
+}
+
+.header__createdby{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  padding: 0 0 0 24px;
+}
+
+.header__createdby a{
+  color: var(--cPurpleMedium);
+  transition: color 300ms ease;
+}
+
+.header__headline{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.header__share{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;  
+  width: 25%;
+  height: 100%;
+}
+
+.twitter-share-button, .github-button, .fb-like{
+  margin: 0 10px 0 0;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 88px;
+  margin: 0 auto 8px auto;
+  background: transparent;
+  color: var(--cGreyDark);
+  box-shadow: none;
+  border: none;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 300;
+}
+
+strong{
+  font-weight: 400;
+}
+
+a{
+  color: var(--cGreyDark);
+  text-decoration: none;
+}
+
+a:hover{
+  color: var(--cPurpleDark);
+}
+
+
+
+

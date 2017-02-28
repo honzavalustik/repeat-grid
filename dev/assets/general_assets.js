@@ -1,0 +1,14 @@
+import "./../robots.txt";
+import "./../manifest.json";
+import "./../sitemap.xml";
+import "./img/ico/ico_32x32.png";
+import "./img/ico/ico_48x48.png";
+import "./img/ico/ico_72x72.png";
+import "./img/ico/ico_96x96.png";
+import "./img/ico/ico_128x128.png";
+import "./img/ico/ico_144x144.png";
+import "./img/ico/ico_152x152.png";
+import "./img/ico/ico_192x192.png";
+import "./img/ico/ico_384x384.png";
+import "./img/ico/ico_512x512.png";
+import "./img/ico/facebook.png";

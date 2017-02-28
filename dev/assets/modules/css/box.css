@@ -1,0 +1,229 @@
+.box{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 832px;
+  height: 72px;
+  margin: 0 auto 8px auto;
+  padding: 0;
+  background: var(--cWhite);
+  border: 1px solid var(--cPurpleMedium);
+  border-radius: 3px;
+  cursor: default;
+}
+
+.box__empty{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  max-width: 688px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 16px 0px;
+  color: var(--cGreyMedium); 
+  background: transparent;
+}
+
+.box__tags{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  max-width: 688px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  color: var(--cPurpleMedium);
+  background: transparent;
+  overflow-x: auto;
+}
+
+.box__tag{
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  height: 40px;
+  padding: 8px;
+  margin-left: 8px;
+  color: var(--cGreyDark);
+  background: var(--cPurpleLight);
+  border: 1px solid var(--cGreyLight);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.box__tag:first-child{
+  margin-left: 0;
+}
+
+.box__tag input{
+  display: inline-block;
+  width: 50px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: var(--cGreyDark);
+  outline: 0;
+  font-family: var(--f);
+  font-weight: 400;
+}
+
+.box__tag input:focus{
+  width: 184px;
+}
+
+.box__tag input:focus + .box__btn-delete-tag{
+  display: none;
+}
+
+.box__preview{
+  position: absolute;
+  top: -86px;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 832px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 8px 16px;
+  background: var(--cPurpleLight);
+  color: var(--cGreyDark);
+  border: 1px dashed var(--cPurpleMedium);
+  border-radius: 3px;
+  word-wrap: normal;
+  overflow-x: auto;
+  display: none;
+}
+
+.box__preview:before{
+  content: "You see one row of data";
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--cPurpleMedium);
+  background: var(--cPurpleLight);
+  z-index: 10;
+  transition: color 300ms ease;
+}
+
+.box__preview:hover:before{
+  color: var(--cGreyDark);
+}
+
+.box__btn-delete-tag{
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0 0 0 8px;
+  font-size: 9px;
+  line-height: 17px;
+  vertical-align: middle;
+  text-align: center;
+  background: var(--cGreyLight);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.box__btn-delete-tag:hover{
+  background: var(--cGreyMedium);
+  color: var(--cWhite);
+}
+
+.box__btn-delete{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 100%;
+  margin: 0;
+  padding: 0 24px;
+  background: transparent;
+  color: var(--cGreyMedium);
+  cursor: pointer;
+  text-align: center;
+  transition: color 200ms ease;
+}
+
+.box__btn-delete:hover{
+  color: var(--cGreyDark);
+}
+
+.box__btn-download{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  max-width: 144px;
+  height: 100%;
+  padding: 16px;
+  background: transparent;
+  text-align: center;
+  border-left: 1px solid var(--cPurpleMedium);
+  border-radius: 0 3px 3px 0;
+  color: var(--cPurpleLight);
+  cursor: pointer;
+}
+
+/* State: initial - there are no tags */
+.box .box__empty{
+  display: flex;
+}
+
+.box .box__tags{
+  display: none;
+}
+
+.box .box__btn-delete{
+  display: none;
+}
+
+.box .box__btn-download{
+  color: var(--cPurpleMedium);
+  cursor: auto;
+  pointer-events: none;
+}
+
+
+/* State: edit - there are some tags */
+.box--edit{
+  box-shadow: 0 2px 8px 0 var(--cPurpleMedium);
+}
+
+.box--edit .box__empty{
+  display: none;
+}
+
+.box--edit .box__tags{
+  display: flex;
+}
+
+.box--edit .box__preview{
+  display: flex;
+}
+
+.box--edit .box__btn-delete{
+  display: flex;
+}
+
+.box--edit .box__btn-download{
+  color: var(--cWhite);
+  background: var(--cPurpleDark);
+  border: none;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.box--edit .box__btn-download:hover{
+  opacity: 0.9;
+}

@@ -1,0 +1,152 @@
+.fields{
+  width: 100%;
+  max-width: 912px;
+  margin: 0 auto 16px auto;
+  padding: 8px 8px 80px 8px;
+  color: var(--cGreyMedium);
+}
+
+.fields__popular{
+  width: 100%;
+  height: auto;
+  margin-bottom: 32px;
+  padding: 0 40px;
+}
+
+.fields__all{
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+}
+
+.fields__row{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 24px 0 0 0;
+}
+
+.fields__field{
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 24px;
+  padding: 0 8px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  line-height: 24px;
+  vertical-align: middle;
+  color: var(--cGreyDark);
+  border: 1px solid var(--cPurpleMedium);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.fields__field:first-child{
+  margin-left: 0;
+}
+
+.fields__field:hover{
+  background: var(--cWhite);
+  color: var(--cPurpleDark);
+}
+
+.fields__field[data-title]:before{
+  /* Top arrow for tooltip */
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--cGreyDark);
+  transform: translateY(-2px) translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fields__field[data-title]:hover:before{
+  transform: translateY(0) translateX(-50%);
+  opacity: 1;
+  transition: all 200ms ease;
+}
+
+
+.fields__field[data-title]:after{
+  /* Tooltip */
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: auto;
+  min-width: 60px;
+  padding: 8px;
+  background: var(--cGreyDark);
+  color: var(--cWhite);
+  border-radius: 3px;
+  z-index: 10;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateY(-2px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fields__field[data-title]:hover:after{
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 200ms ease;
+}
+
+.fields__btn-more{
+  display: inline-block;
+  height: 24px;
+  padding: 0 8px;
+  margin-left: 8px;
+  line-height: 24px;
+  vertical-align: middle;
+  color: var(--cPurpleDark);
+  cursor: pointer;
+}
+
+.fields__btn-more:before{
+  content: "More...";
+}
+
+.fields__field-title{
+  display: block;
+  width: 160px;
+  height: 24px;
+  margin-bottom: 8px;
+  padding: 0 8px;
+  line-height: 24px;
+  vertical-align: middle;
+  color: var(--cGreyMedium);
+}
+
+/* State showMore */
+.fields--showMore .fields__all{
+  visibility: visible;
+}
+
+.fields--showMore .fields__btn-more:before{
+  content: "Less...";
+}
+
+/* State hideAll */
+.fields--hideAll{
+  visibility: hidden;
+}
+
+.fields--hideAll .fields__all{
+  visibility: hidden;
+}
+
+
+
+

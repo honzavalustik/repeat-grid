@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<!-- Fundamentals -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<style>
+*, body, html{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page{
+  width: 100%;
+  height: 8000px;
+  background-color: rgb(240,240,240);
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: 1280px;
+}
+
+@media (max-width: 400px){
+  .page{
+    background-size: 360px;
+  }
+}
+
+@media (min-width: 401px){
+  .page{
+    background-size: 1280px;
+  }
+}
+
+@media (min-width: 801px){
+  .page{
+    background-size: 1280px;
+  }
+}
+
+@media (min-width: 1201px){
+  .page{
+    background-size: 1280px;
+  }
+}
+
+</style>
+
+</head>
+<body>
+  <div class="page" style="background-image: url(1@2x.png);"></div>
+  <div class="page" style="background-image: url(2@2x.png);"></div>
+  <div class="page" style="background-image: url(3@2x.png);"></div>
+</body>
+</html>
