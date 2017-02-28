@@ -1,7 +1,3 @@
-// TODO: Push to GitHub
-// TODO: Domain and deployment
-// TODO: Test live version
-
 // TODO: Mac app when you create txt and then just drag and drop the file directly into AdobeXD
 // TODO: Drag and Drop of tags in box to easily change order
 
