@@ -11,4 +11,6 @@ import "./img/ico/ico_152x152.png";
 import "./img/ico/ico_192x192.png";
 import "./img/ico/ico_384x384.png";
 import "./img/ico/ico_512x512.png";
-import "./img/ico/facebook.png";
+import "./img/ico/facebook2.png";
+import "./img/1.gif";
+import "./img/2.gif";
