@@ -83,6 +83,10 @@ h2{
   font-weight: 300;
 }
 
+h2 a{
+  color: var(--cPurpleDark);
+}
+
 strong{
   font-weight: 400;
 }

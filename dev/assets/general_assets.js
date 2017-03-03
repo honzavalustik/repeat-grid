@@ -14,3 +14,4 @@ import "./img/ico/ico_512x512.png";
 import "./img/ico/facebook2.png";
 import "./img/1.gif";
 import "./img/2.gif";
+import "./img/repeatgrid.mp4";
